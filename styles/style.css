@@ -1,0 +1,25 @@
+.fontcolor-white{
+	color: #fff !important;
+}
+
+
+canvas{
+  display:block;
+}
+
+#particles-js{
+  
+}
+.hello{
+  position: fixed;
+  left: 0;
+  top:40%;
+  color: #fff;
+  z-index:10;
+  font-size:70px;
+  font-family: Helvetica, Verdana, sans-serif;
+  opacity:0.5;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}

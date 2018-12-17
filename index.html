@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>App</title>
+    <link rel="icon" href="img/icons/menu.svg">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" href="styles/angular-material.min.css">
+    <link rel="stylesheet" href="vendor/leaflet.draw.css">
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <script type="text/javascript" src="vendor/angular.js"></script>
+    <script type="text/javascript" src="vendor/angular-ui-router.js"></script>
+    <script type="text/javascript" src="vendor/angular-material.min.js"></script>
+    <script type="text/javascript" src="vendor/angular-animate.min.js"></script>
+    <script type="text/javascript" src="vendor/angular-aria.min.js"></script>
+    <script type="text/javascript" src="vendor/angular-messages.min.js"></script>
+    <script type="text/javascript" src="vendor/md-data-table.js"></script>
+    <script type="text/javascript" src="vendor/highcharts.js"></script>
+    <script type="text/javascript" src="vendor/highcharts-ng.js"></script>
+    <script src="https://unpkg.com/ag-grid@17.1.1/dist/ag-grid.min.js"></script>
+    <link rel="stylesheet" href="styles/md-data-table.css">
+    <!-- <script type="text/javascript" src="vendor/leaflet.draw.js"></script> -->
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <!-- Leaflet Library -->
+    <script type="text/javascript" src="vendor/leaflet.js"></script>
+    <script type="text/javascript" src="vendor/angular-leaflet-directive.min.js"></script>
+    <script type="text/javascript" src="vendor/Google.js"></script>
+    <link rel="stylesheet" href="styles/leaflet.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpamsA-1B8LBr5sRw2IDD9vmdUQGnpS1Y&libraries=geometry"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/controllers/listCtrl.js"></script>
+    <script type="text/javascript" src="scripts/controllers/grid.js"></script>
+    <script type="text/javascript" src="scripts/controllers/canvas.js"></script>
+    <script type="text/javascript" src="scripts/controllers/map.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <base href="/">
+    <style>
+label,i{
+      color: #283593;
+}
+</style>
+</head>
+<body ng-app="todoListApp">
+    <md-toolbar class="md-hue-2" >
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings" ng-disabled="true">
+        </md-button>
+
+        <h2 flex md-truncate></h2>
+
+      <!--   <md-button class="md-primary fontcolor-white" aria-label="Favorite">
+          HOME
+        </md-button>
+
+        <md-button class="md-primary fontcolor-white" aria-label="More" ng-click="map()">
+         MAPS
+        </md-button>
+
+        <md-button class="md-primary fontcolor-white" aria-label="Favorite" ng-click="grid()">
+          GRID
+        </md-button>
+
+        <md-button class="md-primary fontcolor-white" aria-label="Favorite" ng-click="canvas()">
+          CANVAS
+        </md-button> -->
+      </div>
+    </md-toolbar>
+    <div layout="row">
+     <div flex="20" ng-controller="TutorialCtrl">
+        <md-content layout-margin style="max-height:570px;" class="text-decoration" >
+            <md-list flex>
+            
+                </md-list-item>
+                <md-list-item ng-click="map();">
+                    <i class="material-icons" style="width: 20%;">maps</i>
+                    <span flex style="padding-top: 3px;">
+            <label >Maps</label>
+            
+          </span>
+                </md-list-item>
+                <md-list-item ng-click="canvas();">
+                    <i class="material-icons" style="width: 20%;">face</i>
+                    <span flex style="padding-top: 3px;">
+            <label >Canvas</label>
+          </span>
+          </md-list-item>
+          <md-list-item ng-click="grid();">
+                    <i class="material-icons" style="width: 20%;">view_module</i>
+                    <span flex style="padding-top: 3px;">
+            <label >Grid</label>
+          </span>
+          </md-list-item>
+          <md-list-item ng-click="grid();">
+                    <i class="material-icons" style="width: 20%;">Chart</i>
+                    <span flex style="padding-top: 3px;">
+            <label >Chart</label>
+          </span>
+          </md-list-item>
+            </md-list>
+        </md-content>
+    </div>
+   
+    <div ui-view flex>
+    </div>
+</div>
+</body>
+
+</html>
