@@ -32,6 +32,7 @@
     <script type="text/javascript" src="scripts/controllers/grid.js"></script>
     <script type="text/javascript" src="scripts/controllers/canvas.js"></script>
     <script type="text/javascript" src="scripts/controllers/map.js"></script>
+    <script type="text/javascript" src="scripts/controllers/angularjs.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
     <base href="/">
@@ -67,8 +68,8 @@ label,i{
       </div>
     </md-toolbar>
     <div layout="row">
-     <div flex="20" ng-controller="TutorialCtrl">
-        <md-content layout-margin style="max-height:570px;" class="text-decoration" >
+     <div flex="20" ng-controller="TutorialCtrl" style="border-right : 1px solid #dedede">
+        <md-content layout-margin style="max-height:555px;" class="text-decoration" >
             <md-list flex>
             
                 </md-list-item>
@@ -91,10 +92,10 @@ label,i{
             <label >Grid</label>
           </span>
           </md-list-item>
-          <md-list-item ng-click="grid();">
-                    <i class="material-icons" style="width: 20%;">Chart</i>
+          <md-list-item ng-click="angularjs();">
+                    <i class="material-icons" style="width: 20%;">view_module</i>
                     <span flex style="padding-top: 3px;">
-            <label >Chart</label>
+            <label >Angularjs</label>
           </span>
           </md-list-item>
             </md-list>

@@ -1,0 +1,15 @@
+<div style="height: 550px;">
+    <center><h3>Ng-Repeat</h3>
+    </center>
+    <ul>
+        <li ng-repeat="phone in phones" ng-mouseover="open = true" ng-mouseleave="open = false">
+            <span>{{phone.name}}</span>
+            <span class="btn btn-primary" type="button" ng-show="open" ng-click="removeItem($index,1)">
+             <i class="material-icons" style="font-size: 17px; line-height: 0" tooltip="delete">
+delete
+</i>
+           	</span>
+            <p>{{phone.snippet}}</p>
+        </li>
+    </ul>
+</div>

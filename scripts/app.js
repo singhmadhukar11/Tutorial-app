@@ -24,7 +24,13 @@ angular.module("todoListApp", ['ui.router', 'ngMaterial', 'leaflet-directive', '
                 url: "/App",
                 templateUrl: "template/Map.html",
                 controller: "MapCtrl"
+            })
+             .state("Angularjs", {
+                url: "/App",
+                templateUrl: "template/angularjs.html",
+                controller: "angularJs"
             });
+
 
             
     })
