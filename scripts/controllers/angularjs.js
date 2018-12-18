@@ -14,9 +14,17 @@
                 snippet: 'The Next, Next Generation tablet.'
             }];
 
-            $scope.removeItem = function(index) {
-                $scope.phones.splice(index, 1);
-            }
+            $scope.addItem = function() {
+       
+                    $scope.phones.push({
+                        name: 'One Plus',
+                        snippet: 'Never Settle'
+                    });
+                },
+
+                $scope.removeItem = function(index) {
+                    $scope.phones.splice(index, 1);
+                }
             $scope.open = false;
 
         });
