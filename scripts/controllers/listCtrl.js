@@ -9,11 +9,8 @@ angular.module('todoListApp')
             { headerName: "Sport", field: "sport", width: 110 },
             { headerName: "Gold", field: "gold", width: 100 },
             { headerName: "Silver", field: "silver", width: 100 },
-            { headerName: "Bronze", field: "bronze", width: 100 },
-            { headerName: "Menu", field: "menu", width: 100, cellRenderer: ageCellRendererFunc },
-
-
-
+            // { headerName: "Bronze", field: "bronze", width: 100 },
+            { headerName: "Menu", field: "bronze", width: 200, cellRenderer: ageCellRendererFunc },
         ];
 
         $scope.gridOptions = {
@@ -21,22 +18,17 @@ angular.module('todoListApp')
             rowData: null,
             angularCompileRows: true,
             rowSelection: 'single',
-            // onRowClicked: function map(event) {
-            //     $state.go('Map');
-            //     console.log('Row Clicked')
-            // },
-
         };
 
 
 
-        function ageCellRendererFunc() {
-            return '<button ng-click="ageClicked()">Delete</button>';
+        function ageCellRendererFunc(params) {
+            params.$scope.ageClicked = ageClicked;
+            return '<button ng-click="ageClicked(data.bronze)" ng-bind="data.bronze"></button>';
         }
 
-        function ageClicked(params) {
-            params.$scope.ageClicked = ageClicked;
-            alert("Heloo")
+        function ageClicked(bronze) {
+            alert(bronze)
         }
 
         $http.get("https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinners.json")
