@@ -1,22 +1,19 @@
 <div style="height: 550px;">
     <center><h3>Ng-Repeat</h3>
     </center>
-    <div layout="row">
-    
-            <md-input-container flex="15">
-                <label>Name</label>
-                <input ng-model="phones.name">
-            </md-input-container>
-            <div flex="5"></div>
-            <md-input-container  flex="15">
-                <label>snippet</label>
-                <input ng-model="phones.snippet">
-            </md-input-container>
-            <md-button class="md-raised md-primary" ng-click="addItem()">Add</md-button>
-
+    <div layout="column" flex="20">
+        <md-input-container style="margin:0px">
+            <label>Name</label>
+            <input ng-model="phones.name">
+        </md-input-container>
+        <md-input-container style="margin:0px">
+            <label>snippet</label>
+            <input ng-model="phones.snippet">
+        </md-input-container>
+        <md-button class="md-raised md-primary" ng-click="addItem(phones)" style="height: 34px;">Add</md-button>
     </div>
     <ul>
-        <li ng-repeat="phone in phones" ng-mouseover="open = true" ng-mouseleave="open = false">
+        <li ng-repeat="phone in phonesmob" ng-mouseover="open = true" ng-mouseleave="open = false">
             <span>{{phone.name}}</span>
             <span class="btn btn-primary" type="button" ng-show="open" ng-click="removeItem($index,1)" style="cursor: pointer;">
              <i class="material-icons" style="font-size: 17px; line-height: 0" tooltip="Delete">

@@ -18,9 +18,10 @@ angular.module('todoListApp')
             rowData: null,
             angularCompileRows: true,
             rowSelection: 'single',
-
-            onRowClicked: function map(event) { $state.go('Map');
-                console.log('Row Clicked') },
+            onRowClicked: function map(event) {
+                $state.go('Map');
+                console.log('Row Clicked')
+            },
         };
 
         $http.get("https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinners.json")
