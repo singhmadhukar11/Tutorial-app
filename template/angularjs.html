@@ -1,31 +1,59 @@
 <div style="height: 550px;">
     <center><h3>Ng-Repeat</h3>
     </center>
-    <div layout="column" flex="20">
-        <md-input-container style="margin:0px">
-            <label>Name</label>
-            <input ng-model="phones.name">
-        </md-input-container>
-        <md-input-container style="margin:0px">
-            <label>snippet</label>
-            <input ng-model="phones.snippet">
-        </md-input-container>
-        <md-button class="md-raised md-primary" ng-click="addItem(phones)" style="height: 34px;">Add</md-button>
-    </div>
-    <ul>
-        <li ng-repeat="phone in phonesmob" ng-mouseover="open = true" ng-mouseleave="open = false">
-            <span>{{phone.name}}</span>
-            <span class="btn btn-primary" type="button" ng-show="open" ng-click="removeItem($index,1)" style="cursor: pointer;">
+    <div layout="row">
+        <div flex="50" style="border-right: 1px solid #dedede;margin:18px;height: 511px;overflow: auto;">
+            <div layout="column" style="margin: 18px;">
+                <div layout="row">
+                    <md-input-container flex="50">
+                        <label>Name</label>
+                        <md-select ng-model="phones.name">
+                            <md-option ng-repeat="phone in phonesmob" value="{{phone.name}}">
+                                {{phone.name}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                    <div flex="5"></div>
+                    <!--  <md-input-container ng-if="!phones.name" flex="50">
+                        <label>Name</label>
+                        <input ng-model="phones.name">
+                    </md-input-container> -->
+                </div>
+                <div layout="row">
+                    <md-input-container flex="50">
+                        <label>Snippet</label>
+                        <md-select ng-model="phones.snippet">
+                            <md-option ng-repeat="phone in phonesmob" value="{{phone.snippet}}">
+                                {{phone.snippet}}
+                            </md-option>
+                        </md-select>
+                    </md-input-container>
+                    <div flex="5"></div>
+                   <!--  <md-input-container ng-if="!phones.snippet" flex="50">
+                        <label>snippet</label>
+                        <input ng-model="phones.snippet">
+                    </md-input-container> -->
+                </div>
+            </div>
+            <md-button class="md-raised md-primary" ng-click="addItem(phones)" style="height: 34px;" ng-disabled="!phones.snippet">Add</md-button>
+            <div>
+                <ul>
+                    <li ng-repeat="phone in phonesmob" ng-mouseover="open = true" ng-mouseleave="open = false">
+                        <span>{{phone.name}}</span>
+                        <span class="btn btn-primary" type="button" ng-show="open" ng-click="removeItem($index,1)" style="cursor: pointer;">
              <i class="material-icons" style="font-size: 17px; line-height: 0" tooltip="Delete">
 delete
 </i>
 </span>
-            <span class="btn btn-primary" type="button" ng-show="open" ng-click="editItem($index,1)" style="cursor: pointer;">
-             <i class="material-icons" style="font-size: 17px; line-height: 0" tooltip="Edit">
+                        <span class="btn btn-primary" type="button" ng-show="open" ng-click="editItem($index,1)" style="cursor: pointer;">
+             <i class="material-icons" style="font-size: 17x; line-height: 0" tooltip="Edit">
 edit
 </i>
 </span>
-            <p>{{phone.snippet}}</p>
-        </li>
-    </ul>
+                        <p>{{phone.snippet}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>

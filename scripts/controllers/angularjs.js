@@ -1,5 +1,5 @@
     angular.module('todoListApp')
-        .controller('angularJs', function($scope) {
+        .controller('angularJs', function($scope, $http) {
             $scope.phonesmob = [{
                 name: 'Nexus S',
                 snippet: 'Fast just got faster with Nexus S.'
@@ -29,5 +29,10 @@
                 $scope.phonesmob.splice(index, 1);
             }
             $scope.open = false;
+            $http.get("https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinners.json")
+                .then(function(res) {
+                    // console.log(res.data);
+                    $scope.jsonData = res.data;
+                });
 
         });
