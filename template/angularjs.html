@@ -6,10 +6,10 @@
             <div layout="column" style="margin: 18px;">
                 <div layout="row">
                     <md-input-container flex="50">
-                        <label>Name</label>
-                        <md-select ng-model="phones.name">
-                            <md-option ng-repeat="phone in phonesmob" value="{{phone.name}}">
-                                {{phone.name}}
+                        <label>Athlete</label>
+                        <md-select ng-model="phones.athlete">
+                            <md-option ng-repeat="phone in phonesmob" value="{{phone.athlete}}">
+                                {{phone.athlete}}
                             </md-option>
                         </md-select>
                     </md-input-container>
@@ -21,15 +21,15 @@
                 </div>
                 <div layout="row">
                     <md-input-container flex="50">
-                        <label>Snippet</label>
-                        <md-select ng-model="phones.snippet">
-                            <md-option ng-repeat="phone in phonesmob" value="{{phone.snippet}}">
-                                {{phone.snippet}}
+                        <label>Country</label>
+                        <md-select ng-model="phones.country">
+                            <md-option ng-repeat="phone in phonesmob" value="{{phone.country}}">
+                                {{phone.country}}
                             </md-option>
                         </md-select>
                     </md-input-container>
                     <div flex="5"></div>
-                   <!--  <md-input-container ng-if="!phones.snippet" flex="50">
+                    <!--  <md-input-container ng-if="!phones.snippet" flex="50">
                         <label>snippet</label>
                         <input ng-model="phones.snippet">
                     </md-input-container> -->
@@ -39,7 +39,7 @@
             <div>
                 <ul>
                     <li ng-repeat="phone in phonesmob" ng-mouseover="open = true" ng-mouseleave="open = false">
-                        <span>{{phone.name}}</span>
+                        <span>{{phone.athlete}}</span>
                         <span class="btn btn-primary" type="button" ng-show="open" ng-click="removeItem($index,1)" style="cursor: pointer;">
              <i class="material-icons" style="font-size: 17px; line-height: 0" tooltip="Delete">
 delete
@@ -50,7 +50,7 @@ delete
 edit
 </i>
 </span>
-                        <p>{{phone.snippet}}</p>
+                        <p>{{phone.country}}</p>
                     </li>
                 </ul>
             </div>
