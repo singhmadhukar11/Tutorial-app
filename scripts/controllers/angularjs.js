@@ -29,10 +29,14 @@
                 $scope.phonesmob.splice(index, 1);
             }
             $scope.open = false;
-            $http.get("https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinners.json")
+            
+            // $http.get("https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinners.json")
+            $http.get("https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/5UXWX7C5*BA?format=json&modelyear=2011")
                 .then(function(res) {
                     // console.log(res.data);
                     $scope.phonesmob = res.data;
+                    console.log($scope.phonesmob);
+                    
                 });
 
         });
